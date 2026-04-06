@@ -1,5 +1,0 @@
-$kind: collection
-description: All API endpoints for Finance Dashboard Backend
-variables:
-  base_url: http://localhost:5000
-  token: ""
