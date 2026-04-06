@@ -31,7 +31,10 @@ const errorHandler = (err, req, res, next) => {
 };
 
 // Wraps async route handlers to avoid try/catch boilerplate
-const asyncHandler = (fn) => (req, res, next) =>
-  Promise.resolve(fn(req, res, next)).catch(next);
+const asyncHandler = (fn) => {
+  return (req, res, next) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
+  };
+};
 
 module.exports = { errorHandler, asyncHandler };

@@ -1,0 +1,54 @@
+### Register User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Yash",
+  "email": "yash@example.com",
+  "password": "secret123",
+  "role": "admin"
+}
+
+###
+
+### Login User
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "yash@example.com",
+  "password": "secret123"
+}
+
+###
+
+### Get Current User
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer YOUR_TOKEN_HERE
+
+###
+
+### Create Record
+POST http://localhost:5000/api/records
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "amount": 1000,
+  "type": "income",
+  "category": "Salary",
+  "date": "2026-04-06",
+  "note": "Test income"
+}
+
+###
+
+### Get Records
+GET http://localhost:5000/api/records
+Authorization: Bearer YOUR_TOKEN_HERE
+
+###
+
+### Dashboard Summary
+GET http://localhost:5000/api/dashboard/summary
+Authorization: Bearer YOUR_TOKEN_HERE
